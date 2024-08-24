@@ -12,16 +12,19 @@ namespace Main.Input.Gameplay
         public UnityAction<float> MoveVerticalEvent;
         public UnityAction<float> MoveHorizontalEvent;
         public UnityAction InteractEvent;
+        public UnityAction <bool> RunEvent;
 
         private InputAction _moveVertical;
         private InputAction _moveHorizontal;
-        private InputAction _Interact;
+        private InputAction _interact;
+        private InputAction _run;
 
         private void OnEnable()
         {
             _moveVertical = _asset.FindAction("Vertical");
             _moveHorizontal = _asset.FindAction("Horizontal");
-            _Interact = _asset.FindAction("Interact");
+            _interact = _asset.FindAction("Interact");
+            _run = _asset.FindAction("Run");
 
             _moveVertical.started += OnMoveVertical;
             _moveVertical.canceled += OnMoveVertical;
@@ -29,12 +32,16 @@ namespace Main.Input.Gameplay
             _moveHorizontal.started += OnMoveHorizontal;
             _moveHorizontal.canceled += OnMoveHorizontal;
 
-            _Interact.started += OnInteract;
-            _Interact.canceled += OnInteract;
+            _interact.started += OnInteract;
+            _interact.canceled += OnInteract;
+
+            _run.started += OnRun;
+            _run.canceled += OnRun;
 
             _moveVertical.Enable();
             _moveHorizontal.Enable();
-            _Interact.Enable();
+            _interact.Enable();
+            _run.Enable();
         }
 
         private void OnDisable()
@@ -45,12 +52,13 @@ namespace Main.Input.Gameplay
             _moveHorizontal.started -= OnMoveHorizontal;
             _moveHorizontal.canceled -= OnMoveHorizontal;
 
-            _Interact.started -= OnInteract;
-            _Interact.canceled -= OnInteract;
+            _interact.started -= OnInteract;
+            _interact.canceled -= OnInteract;
 
             _moveVertical.Disable();
             _moveHorizontal.Disable();
-            _Interact.Disable();
+            _interact.Disable();
+            _run.Disable();
         }
             
         #region OnEvent Functions
@@ -68,6 +76,13 @@ namespace Main.Input.Gameplay
         private void OnInteract(InputAction.CallbackContext context)
         {
             if (InteractEvent != null && context.started) InteractEvent.Invoke();
+        }
+
+        private void OnRun(InputAction.CallbackContext context)
+        {
+            if (RunEvent != null && context.started) RunEvent.Invoke(true);
+
+            else if (RunEvent != null && context.canceled) RunEvent.Invoke(false);
         }
 
         #endregion
