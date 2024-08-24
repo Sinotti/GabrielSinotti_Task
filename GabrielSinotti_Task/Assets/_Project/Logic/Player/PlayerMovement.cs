@@ -16,8 +16,11 @@ namespace Main.Gameplay.Player.Behaviors
         [Space(6)]
         [SerializeField] private InputReader _inputReader;
 
+        private float _currentSpeed;
         private Vector3 _currentDirectionInput;
         private bool _runInput;
+
+        private bool MovingBackward => _currentDirectionInput.z < 0;
 
         private void Awake()
         {
@@ -28,15 +31,24 @@ namespace Main.Gameplay.Player.Behaviors
 
         private void FixedUpdate()
         {
+            if (!MovingBackward)
+            {
+                MoveSpeedManager();
+            }
             Movement();
         }
 
         private void Movement()
         {
-            Vector3 moveDirection = new Vector3(_currentDirectionInput.x, 0, _currentDirectionInput.z);
-            transform.position += moveDirection * _speed * Time.deltaTime;
+            Vector3 moveDirection = new Vector3(_currentDirectionInput.x, 0, _currentDirectionInput.z).normalized;
+            transform.position += moveDirection * _currentSpeed * Time.deltaTime;
         }
 
+        private void MoveSpeedManager()
+        {
+            if (_runInput) _currentSpeed = _runSpeed;
+            else _currentSpeed = _speed;
+        }
         #region Input Assigments
         private void OnMoveVertical(float verticalMovementInput)
         {

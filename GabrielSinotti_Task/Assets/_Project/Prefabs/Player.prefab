@@ -80,8 +80,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceaee3e44001e2f42b7e929716af6ad0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 5
-  _runSpeed: 0
+  _speed: 2
+  _runSpeed: 4
   _inputReader: {fileID: 11400000, guid: 536751e8e0050554294815e35fde3082, type: 2}
 --- !u!136 &7471855269258938906
 CapsuleCollider:
@@ -146,7 +146,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _increaseSpeed: 5
-  _decreaseSpeed: -5
+  _baseAnimSpeedLimit: 1
+  _runningAnimSpeedLimit: 2
   _anim: {fileID: 8547521415940419396}
   _inputReader: {fileID: 11400000, guid: 536751e8e0050554294815e35fde3082, type: 2}
 --- !u!1001 &2566001138375213520

@@ -9,7 +9,9 @@ namespace Main.Gameplay.Player.Animations
     {
         [Header("Animation Transition Parameters")]
         [Space(6)]
-        [SerializeField] private float _increaseSpeed = 5f; 
+        [SerializeField] private float _increaseSpeed = 5f;
+        [SerializeField] private float _baseAnimSpeedLimit = 1.0f;
+        [SerializeField] private float _runningAnimSpeedLimit = 2.0f;
 
         [Header("References")]
         [Space(6)]
@@ -19,10 +21,10 @@ namespace Main.Gameplay.Player.Animations
         private int _animatorSpeedXHash = Animator.StringToHash("VelocityX");
         private int _animatorSpeedZHash = Animator.StringToHash("VelocityZ");
 
-        private bool _runInput;
+        private float _currentAnimSpeedLimit = 1.0f;
         private float _animSpeedX = 0.0f;
         private float _animSpeedZ = 0.0f;
-        private float _forwardAnimSpeedLimit = 1.0f;
+        private bool _runInput;
         private Vector3 _currentDirectionInput;
 
         private void Awake()
@@ -41,8 +43,8 @@ namespace Main.Gameplay.Player.Animations
 
         private void Update()
         {
-            _animSpeedX = Mathf.Lerp(_animSpeedX, _currentDirectionInput.x * _forwardAnimSpeedLimit, Time.deltaTime * _increaseSpeed);
-            _animSpeedZ = Mathf.Lerp(_animSpeedZ, _currentDirectionInput.z * _forwardAnimSpeedLimit, Time.deltaTime * _increaseSpeed);
+            _animSpeedX = Mathf.Lerp(_animSpeedX, _currentDirectionInput.x * _currentAnimSpeedLimit, Time.deltaTime * _increaseSpeed);
+            _animSpeedZ = Mathf.Lerp(_animSpeedZ, _currentDirectionInput.z * _currentAnimSpeedLimit, Time.deltaTime * _increaseSpeed);
 
             _anim.SetFloat(_animatorSpeedXHash, _animSpeedX);
             _anim.SetFloat(_animatorSpeedZHash, _animSpeedZ);
@@ -61,6 +63,9 @@ namespace Main.Gameplay.Player.Animations
         private void OnRun(bool runInput)
         {
             _runInput = runInput;
+
+            if (_runInput) _currentAnimSpeedLimit = _runningAnimSpeedLimit;
+            else _currentAnimSpeedLimit = _baseAnimSpeedLimit;
         }
     }
 }
