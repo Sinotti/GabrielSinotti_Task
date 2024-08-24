@@ -9,8 +9,7 @@ namespace Main.Gameplay.Player.Animations
     {
         [Header("Animation Transition Parameters")]
         [Space(6)]
-        [SerializeField] private float _increaseSpeed = 5f;
-        [SerializeField] private float _decreaseSpeed = -5f;
+        [SerializeField] private float _increaseSpeed = 5f; 
 
         [Header("References")]
         [Space(6)]
@@ -20,73 +19,35 @@ namespace Main.Gameplay.Player.Animations
         private int _animatorSpeedXHash = Animator.StringToHash("VelocityX");
         private int _animatorSpeedZHash = Animator.StringToHash("VelocityZ");
 
-        private float _forwardAnimSpeedLimit;
-        private float _animSpeed = 0.0f;
-        private float _runningSpeedModifier = 1;
-        private float _runAnimationModfier;
         private bool _runInput;
+        private float _animSpeedX = 0.0f;
+        private float _animSpeedZ = 0.0f;
+        private float _forwardAnimSpeedLimit = 1.0f;
         private Vector3 _currentDirectionInput;
-
-        bool IsIdle => _currentDirectionInput == Vector3.zero;
-        bool IsWalkingForward => _currentDirectionInput.z > 0 && _animSpeed < _forwardAnimSpeedLimit;
-        bool SpeedOverLimit => _animSpeed > _forwardAnimSpeedLimit;
-        bool SpeedUnderLimit => _animSpeed < _currentDirectionInput.z;
 
         private void Awake()
         {
             _inputReader.MoveVerticalEvent += OnMoveVertical;
+            _inputReader.MoveHorizontalEvent += OnMoveHorizontal;
+            _inputReader.RunEvent += OnRun;
         }
 
         private void OnDisable()
         {
             _inputReader.MoveVerticalEvent -= OnMoveVertical;
-        }
-        private void Start()
-        {
-
+            _inputReader.MoveHorizontalEvent -= OnMoveHorizontal;
+            _inputReader.RunEvent -= OnRun;
         }
 
         private void Update()
         {
-            _forwardAnimSpeedLimit = _currentDirectionInput.z + _runAnimationModfier;
+            _animSpeedX = Mathf.Lerp(_animSpeedX, _currentDirectionInput.x * _forwardAnimSpeedLimit, Time.deltaTime * _increaseSpeed);
+            _animSpeedZ = Mathf.Lerp(_animSpeedZ, _currentDirectionInput.z * _forwardAnimSpeedLimit, Time.deltaTime * _increaseSpeed);
 
-            MoveAnimation();
-
-            if (IsIdle)
-            {
-                IdleAnimation();
-            }
-
-            _anim.SetFloat(_animatorSpeedZHash, _animSpeed);
-        }
-        private void AdjustSpeedParameter(float velocity)
-        {
-            _animSpeed += Time.deltaTime * velocity;
+            _anim.SetFloat(_animatorSpeedXHash, _animSpeedX);
+            _anim.SetFloat(_animatorSpeedZHash, _animSpeedZ);
         }
 
-        private void IdleAnimation()
-        {
-            if (SpeedOverLimit)
-            {
-                AdjustSpeedParameter(_decreaseSpeed);
-            }
-            else if (SpeedUnderLimit)
-            {
-                AdjustSpeedParameter(_increaseSpeed);
-            }
-
-            else return;
-        }
-
-        private void MoveAnimation()
-        {
-            if (IsWalkingForward)
-            {
-                AdjustSpeedParameter(_increaseSpeed);
-            }
-        }
-
-        #region Input Assigments
         private void OnMoveVertical(float verticalMovementInput)
         {
             _currentDirectionInput.z = verticalMovementInput;
@@ -101,6 +62,5 @@ namespace Main.Gameplay.Player.Animations
         {
             _runInput = runInput;
         }
-        #endregion
     }
 }
