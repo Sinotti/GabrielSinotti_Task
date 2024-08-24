@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Main.Gameplay.Player
+namespace Main.Gameplay.Player.Behaviors
 {
     public class PlayerMovement : MonoBehaviour
     {
@@ -40,12 +40,12 @@ namespace Main.Gameplay.Player
         #region Input Assigments
         private void OnMoveVertical(float verticalMovementInput)
         {
-            _currentDirectionInput.x = verticalMovementInput;
+            _currentDirectionInput.z = verticalMovementInput;
         }
 
         private void OnMoveHorizontal(float horizontalMovementInput)
         {
-            _currentDirectionInput.z = horizontalMovementInput;
+            _currentDirectionInput.x = horizontalMovementInput;
         }
 
         private void OnRun(bool runInput)

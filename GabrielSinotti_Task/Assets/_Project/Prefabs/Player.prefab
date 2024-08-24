@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 1565624435580374373}
   - component: {fileID: 7471855269258938906}
   - component: {fileID: 7316205544087867484}
+  - component: {fileID: 4917675483911629140}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -130,8 +131,24 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &4917675483911629140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7115229511731231130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0584b8965132f34983c1096ce33eb66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _increaseSpeed: 5
+  _decreaseSpeed: -5
+  _anim: {fileID: 8547521415940419396}
+  _inputReader: {fileID: 11400000, guid: 536751e8e0050554294815e35fde3082, type: 2}
 --- !u!1001 &2566001138375213520
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -225,8 +242,8 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3412934263439850625}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: 3e2d9a407ef20244e8d3a63281940764, type: 3}
+  m_Controller: {fileID: 9100000, guid: 515904bfd1bb1ad41ae43624b724ee78, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
