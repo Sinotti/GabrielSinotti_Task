@@ -73,9 +73,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3416217900009679369}
   - component: {fileID: 1565624435580374373}
+  - component: {fileID: 4206169023564207380}
+  - component: {fileID: 4917675483911629140}
   - component: {fileID: 7471855269258938906}
   - component: {fileID: 7316205544087867484}
-  - component: {fileID: 4917675483911629140}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -114,6 +115,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 2
   _runSpeed: 4
+  _inputReader: {fileID: 11400000, guid: 536751e8e0050554294815e35fde3082, type: 2}
+--- !u!114 &4206169023564207380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7115229511731231130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e30427cf501232242b5e5e37851250e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rotationSpeed: 10
+  _inputReader: {fileID: 11400000, guid: 536751e8e0050554294815e35fde3082, type: 2}
+--- !u!114 &4917675483911629140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7115229511731231130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0584b8965132f34983c1096ce33eb66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _increaseSpeed: 5
+  _baseAnimSpeedLimit: 1
+  _runningAnimSpeedLimit: 2
+  _anim: {fileID: 8547521415940419396}
   _inputReader: {fileID: 11400000, guid: 536751e8e0050554294815e35fde3082, type: 2}
 --- !u!136 &7471855269258938906
 CapsuleCollider:
@@ -163,25 +195,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &4917675483911629140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7115229511731231130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0584b8965132f34983c1096ce33eb66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _increaseSpeed: 5
-  _baseAnimSpeedLimit: 1
-  _runningAnimSpeedLimit: 2
-  _anim: {fileID: 8547521415940419396}
-  _inputReader: {fileID: 11400000, guid: 536751e8e0050554294815e35fde3082, type: 2}
 --- !u!1001 &2566001138375213520
 PrefabInstance:
   m_ObjectHideFlags: 0

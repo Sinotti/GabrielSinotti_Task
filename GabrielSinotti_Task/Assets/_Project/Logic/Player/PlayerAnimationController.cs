@@ -1,6 +1,4 @@
 using Main.Input.Gameplay;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Main.Gameplay.Player.Animations
@@ -34,7 +32,7 @@ namespace Main.Gameplay.Player.Animations
             _inputReader.RunEvent += OnRun;
         }
 
-        private void OnDisable()
+        private void OnDestroy()
         {
             _inputReader.MoveVerticalEvent -= OnMoveVertical;
             _inputReader.MoveHorizontalEvent -= OnMoveHorizontal;

@@ -1,6 +1,4 @@
 using Main.Input.Gameplay;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Main.Gameplay.Player.Behaviors
@@ -29,18 +27,28 @@ namespace Main.Gameplay.Player.Behaviors
             _inputReader.RunEvent += OnRun;
         }
 
+        private void OnDestroy()
+        {
+            _inputReader.MoveVerticalEvent -= OnMoveVertical;
+            _inputReader.MoveHorizontalEvent -= OnMoveHorizontal;
+            _inputReader.RunEvent -= OnRun;
+        }
+
         private void FixedUpdate()
         {
             if (!MovingBackward)
             {
                 MoveSpeedManager();
             }
+
             Movement();
         }
 
         private void Movement()
         {
             Vector3 moveDirection = new Vector3(_currentDirectionInput.x, 0, _currentDirectionInput.z).normalized;
+            moveDirection = transform.TransformDirection(moveDirection);
+
             transform.position += moveDirection * _currentSpeed * Time.deltaTime;
         }
 
