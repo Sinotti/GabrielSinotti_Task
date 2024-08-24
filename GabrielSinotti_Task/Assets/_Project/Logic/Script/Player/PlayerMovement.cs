@@ -1,4 +1,4 @@
-using Main.Input.Gameplay;
+using Main.SO.Input;
 using UnityEngine;
 
 namespace Main.Gameplay.Player.Behaviors

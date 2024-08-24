@@ -1,4 +1,4 @@
-using Main.Input.Gameplay;
+using Main.SO.Input;
 using UnityEngine;
 
 namespace Main.Gameplay.Player.Behaviors
@@ -7,7 +7,7 @@ namespace Main.Gameplay.Player.Behaviors
     {
         [Header("Rotation Parameters")]
         [Space(6)]
-        [SerializeField] private float _rotationSpeed = 10f; // Certifique-se de definir um valor padrão
+        [SerializeField] private float _rotationSpeed = 10f;
 
         [Header("References")]
         [Space(6)]

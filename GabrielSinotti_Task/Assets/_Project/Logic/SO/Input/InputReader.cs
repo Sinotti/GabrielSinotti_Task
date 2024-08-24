@@ -2,9 +2,9 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
-namespace Main.Input.Gameplay
+namespace Main.SO.Input
 {
-    [CreateAssetMenu(menuName = "Input/ Input Reader", fileName = "Input Reader")]
+    [CreateAssetMenu(menuName = "SO/Input/Input Reader", fileName = "New Input Reader")]
     public class InputReader : ScriptableObject
     {
         [SerializeField] private InputActionAsset _asset;
