@@ -10,14 +10,21 @@ public class InventoryItemBase : InteractableBase
     [Space(6)]
     [SerializeField] private InventoryItemSO _inventoryItem;
 
+    private void Start()
+    {
+        CanInteract = true;    
+    }
+
     public override void Interact()
     {
         base.Interact();
-        CollectItem();
+        if(CanInteract) CollectItem();
     }
 
     private void CollectItem()
     {
+        CanInteract = false;
+
         InventorySystem.Instance.AddItem(_inventoryItem);
         Debug.Log(gameObject.name + " collected!");
         Destroy(gameObject);
