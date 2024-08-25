@@ -1,4 +1,5 @@
 using Main.SO.Items;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +10,9 @@ namespace Main.Systems
         public static InventorySystem Instance { get; private set; }
 
         [SerializeField] private List<InventoryItemSO> _inventoryItems;
+
+        public static event Action<InventoryItemSO> OnAdded;
+        public static event Action<InventoryItemSO> OnRemoved;
 
         private void Awake()
         {
@@ -31,6 +35,7 @@ namespace Main.Systems
             {
                 _inventoryItems.Add(item);
                 Debug.Log(item.name + " added to inventory.");
+                OnAdded?.Invoke(item);
             }
         }
 
@@ -45,6 +50,7 @@ namespace Main.Systems
             {
                 _inventoryItems.Remove(item);
                 Debug.Log(item.name + " removed from inventory.");
+                OnRemoved?.Invoke(item);
             }
         }
 

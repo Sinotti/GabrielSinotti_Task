@@ -2,7 +2,7 @@ using Main.SO.Items;
 using Main.Systems;
 using UnityEngine;
 
-public class InventoryItemBase : InteractableBase
+public class InventoryItem : InteractableBase
 {
     [Header("References")]
     [Space(6)]
