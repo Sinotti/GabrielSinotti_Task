@@ -1544,7 +1544,7 @@ MonoBehaviour:
   _popUpPrefab: {fileID: 1613233465315481055, guid: 7b6728d181fd31442aa2e767ca41e540,
     type: 3}
   _popUpParent: {fileID: 6906993584402133936}
-  _displayDuration: 3.5
+  _displayDuration: 2.5
 --- !u!1 &7675578402955171409
 GameObject:
   m_ObjectHideFlags: 0
