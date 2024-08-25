@@ -18,6 +18,7 @@ public class InventoryItemBase : InteractableBase
 
     private void CollectItem()
     {
+        InventorySystem.Instance.AddItem(_inventoryItem);
         Debug.Log(gameObject.name + " collected!");
         Destroy(gameObject);
     }
