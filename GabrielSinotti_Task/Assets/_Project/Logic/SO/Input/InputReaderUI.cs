@@ -12,16 +12,18 @@ namespace Main.SO.Input
         public UnityAction ConfirmEvent;
         public UnityAction BackEvent;
         public UnityAction PauseEvent;
+        public UnityAction InventoryEvent;
 
         private InputAction _confirm;
         private InputAction _back;
         private InputAction _pause;
-
+        private InputAction _inventory;
         public enum UIInputType
         {
             Confirm,
             Back,
             Pause,
+            Inventory,
             All
         }
 
@@ -30,14 +32,17 @@ namespace Main.SO.Input
             _confirm = _asset.FindAction("Confirm");
             _back = _asset.FindAction("Back");
             _pause = _asset.FindAction("Pause");
+            _inventory = _asset.FindAction("Inventory");
 
             _confirm.started += OnConfirm;
             _back.started += OnBack;
             _pause.started += OnPause;
+            _inventory.started += OnInventory;
 
             _confirm.Enable();
             _back.Enable();
             _pause.Enable();
+            _inventory.Enable();
         }
 
         private void OnDisable()
@@ -45,10 +50,12 @@ namespace Main.SO.Input
             _confirm.started -= OnConfirm;
             _back.started -= OnBack;
             _pause.started -= OnPause;
+            _inventory.started -= OnInventory;
 
             _confirm.Disable();
             _back.Disable();
             _pause.Disable();
+            _inventory.Disable();
         }
 
         #region OnEventFunctions
@@ -66,6 +73,11 @@ namespace Main.SO.Input
         private void OnPause(InputAction.CallbackContext context)
         {
             if (PauseEvent != null && context.started) PauseEvent.Invoke();
+        }
+
+        private void OnInventory(InputAction.CallbackContext context)
+        {
+            if (InventoryEvent != null && context.started) InventoryEvent.Invoke();
         }
         #endregion
 

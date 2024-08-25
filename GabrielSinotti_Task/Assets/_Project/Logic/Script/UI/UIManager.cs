@@ -18,11 +18,13 @@ namespace Main.UI
         [SerializeField] private InputReaderUI _inputReader;
 
         private bool CanShowPauseScreen => _pauseScreen != null && !_inventoryScreen.activeSelf;
+        private bool CanShowInventoryScreen => _inventoryScreen != null && !_pauseScreen.activeSelf;
         private void OnEnable()
         {
             _inputReader.ConfirmEvent += OnConfirm;
             _inputReader.BackEvent += OnBack;
             _inputReader.PauseEvent += OnPause;
+            _inputReader.InventoryEvent += OnInventory;
         }
 
         private void OnDisable()
@@ -30,6 +32,12 @@ namespace Main.UI
             _inputReader.ConfirmEvent -= OnConfirm;
             _inputReader.BackEvent -= OnBack;
             _inputReader.PauseEvent -= OnPause;
+            _inputReader.InventoryEvent += OnInventory;
+        }
+
+        private void ToggleScreen(GameObject screen)
+        {
+            screen.SetActive(!screen.activeSelf);
         }
 
         #region Input Assigments
@@ -40,16 +48,27 @@ namespace Main.UI
 
         private void OnBack()
         {
-            Debug.Log("Back");
+            Debug.Log("Back"); 
         }
 
         private void OnPause()
         {
-            if (CanShowPauseScreen) 
+            if(CanShowPauseScreen)
             {
-                _pauseScreen.SetActive(!_pauseScreen.activeSelf);
+                _inputReader.ToggleUIInput(!CanShowInventoryScreen, InputReaderUI.UIInputType.Inventory);
+                ToggleScreen(_pauseScreen);
                 GameStateManager.Instance.TogglePause();
-            } 
+            }
+        }
+
+        private void OnInventory()
+        {
+            if(CanShowInventoryScreen) 
+            {
+                _inputReader.ToggleUIInput(!CanShowPauseScreen, InputReaderUI.UIInputType.Pause);
+                ToggleScreen(_inventoryScreen);
+                GameStateManager.Instance.TogglePause();
+            }
         }
         #endregion
     }
