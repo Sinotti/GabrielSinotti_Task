@@ -117,6 +117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fdac1d6a78fd8745b11204ce9414e50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _inventoryScreen: {fileID: 4166955069181706006}
+  _pauseScreen: {fileID: 7124853707185410493}
   _inputReader: {fileID: 11400000, guid: 576ab9b6cf72a9944ae3314c1778d763, type: 2}
 --- !u!1 &3348522582766038332
 GameObject:
@@ -261,7 +263,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6675522357044409359
 RectTransform:
   m_ObjectHideFlags: 0
