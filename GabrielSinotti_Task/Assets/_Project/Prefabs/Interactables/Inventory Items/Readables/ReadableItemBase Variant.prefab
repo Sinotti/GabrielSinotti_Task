@@ -210,4 +210,4 @@ MonoBehaviour:
   _OnInteract:
     m_PersistentCalls:
       m_Calls: []
-  _inventoryItem: {fileID: 11400000, guid: 23811768fc3876c45b41682340317de0, type: 2}
+  _inventoryItem: {fileID: 11400000, guid: ab18e69811d4fbd4b938f68fe653905a, type: 2}
