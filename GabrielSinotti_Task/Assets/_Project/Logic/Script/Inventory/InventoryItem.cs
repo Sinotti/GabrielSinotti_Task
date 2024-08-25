@@ -2,34 +2,37 @@ using Main.SO.Items;
 using Main.Systems;
 using UnityEngine;
 
-public class InventoryItem : InteractableBase
+namespace Main.Interactables.Items
 {
-    [Header("References")]
-    [Space(6)]
-    [SerializeField] private InventoryItemSO _inventoryItem;
-
-    private bool InventoryFull => InventorySystem.Instance.InventoryFull;
-
-    private void Start()
+    public class InventoryItem : InteractableBase
     {
-        CanInteract = true;    
-    }
+        [Header("References")]
+        [Space(6)]
+        [SerializeField] private InventoryItemSO _inventoryItem;
 
-    public override void Interact()
-    {
-        base.Interact();
-        if(CanInteract) CollectItem();
-    }
+        private bool InventoryFull => InventorySystem.Instance.InventoryFull;
 
-    private void CollectItem()
-    {
-        if (!InventoryFull)
+        private void Start()
         {
-            CanInteract = false;
+            CanInteract = true;
+        }
 
-            InventorySystem.Instance.AddItem(_inventoryItem);
-            Debug.Log(gameObject.name + " collected!");
-            Destroy(gameObject);
+        public override void Interact()
+        {
+            base.Interact();
+            if (CanInteract) CollectItem();
+        }
+
+        private void CollectItem()
+        {
+            if (!InventoryFull)
+            {
+                CanInteract = false;
+
+                InventorySystem.Instance.AddItem(_inventoryItem);
+                Debug.Log(gameObject.name + " collected!");
+                Destroy(gameObject);
+            }
         }
     }
 }
