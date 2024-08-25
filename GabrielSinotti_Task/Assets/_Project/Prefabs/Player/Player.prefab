@@ -130,6 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactableLayer: 6
+  _inputReader: {fileID: 11400000, guid: 536751e8e0050554294815e35fde3082, type: 2}
 --- !u!1 &7115229511731231130
 GameObject:
   m_ObjectHideFlags: 0
