@@ -1,18 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class GameStateManager : MonoBehaviour
+namespace Main.Systems
 {
-    // Start is called before the first frame update
-    void Start()
+    public class GameStateManager : MonoBehaviour
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
