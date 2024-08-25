@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a6e166a6f5bbec4bb019111630c8742, type: 3}
   m_Name: InventoryItemBase
   m_EditorClassIdentifier: 
+  _itemName: Estus Flask
+  _itemImage: {fileID: 21300000, guid: 075b2e71ec9d8a94798b7291f2d07177, type: 3}

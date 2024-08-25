@@ -7,6 +7,9 @@ namespace Main.SO.Items
     {
         [SerializeField] private string _itemName;
         [SerializeField] private Sprite _itemImage;
+
+        public string ItemName { get => _itemName; set => _itemName = value; }
+        public Sprite ItemImage { get => _itemImage; set => _itemImage = value; }
     }
 }
 
