@@ -31,11 +31,14 @@ namespace Main.UI
             }
 
             GameObject newPopUp = Instantiate(_popUpPrefab, _popUpParent);
-            Image popUpImage = newPopUp.GetComponent<Image>();
 
-            if (popUpImage != null && item != null)
+            if (newPopUp.TryGetComponent(out Image popUpImage) && item != null)
             {
                 popUpImage.sprite = item.ItemImage;
+            }
+            else
+            {
+                Debug.LogWarning("CollectItemPopUP: Image component is missing in the prefab or item is null.");
             }
 
             Destroy(newPopUp, _displayDuration);
