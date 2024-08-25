@@ -7,7 +7,7 @@ namespace Main.UI
 {
     public class CollectItemPopUP : MonoBehaviour
     {
-        [Header("PopUp Settings")]
+        [Header("Pop Up Settings")]
         [SerializeField] private GameObject _popUpPrefab;
         [SerializeField] private Transform _popUpParent;
         [SerializeField] private float _displayDuration = 2f;
