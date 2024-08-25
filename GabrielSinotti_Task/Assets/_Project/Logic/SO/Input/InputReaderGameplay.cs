@@ -19,6 +19,15 @@ namespace Main.SO.Input
         private InputAction _interact;
         private InputAction _run;
 
+        public enum InputType
+        {
+            Vertical,
+            Horizontal,
+            Interact,
+            Run,
+            All
+        }
+
         private void OnEnable()
         {
             _moveVertical = _asset.FindAction("Vertical");
@@ -86,5 +95,73 @@ namespace Main.SO.Input
         }
 
         #endregion
+
+        public void ToggleGameplayInput(bool value, InputType inputType = InputType.All)
+        {
+            switch (inputType)
+            {
+                case InputType.All:
+                    if (value)
+                    {
+                        _moveVertical.Enable();
+                        _moveHorizontal.Enable();
+                        _interact.Enable();
+                        _run.Enable();
+                    }
+                    else
+                    {
+                        _moveVertical.Disable();
+                        _moveHorizontal.Disable();
+                        _interact.Disable();
+                        _run.Disable();
+                    }
+                    break;
+
+                case InputType.Vertical:
+                    if (value)
+                    {
+                        _moveVertical.Enable();
+                    }
+                    else
+                    {
+                        _moveVertical.Disable();
+                    }
+                    break;
+
+                case InputType.Horizontal:
+                    if (value)
+                    {
+                        _moveHorizontal.Enable();
+                    }
+                    else
+                    {
+                        _moveHorizontal.Disable();
+                    }
+                    break;
+
+                case InputType.Run:
+                    if (value)
+                    {
+                        _run.Enable();
+                    }
+                    else
+                    {
+                        _run.Disable();
+                    }
+                    break;
+
+                case InputType.Interact:
+                    if (value)
+                    {
+                        _interact.Enable();
+                    }
+                    else
+                    {
+                        _interact.Disable();
+                    }
+                    break;
+            }
+        }
+
     }
 }

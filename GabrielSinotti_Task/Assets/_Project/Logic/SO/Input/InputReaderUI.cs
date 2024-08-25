@@ -17,6 +17,14 @@ namespace Main.SO.Input
         private InputAction _back;
         private InputAction _pause;
 
+        public enum UIInputType
+        {
+            Confirm,
+            Back,
+            Pause,
+            All
+        }
+
         private void OnEnable()
         {
             _confirm = _asset.FindAction("Confirm");
@@ -48,20 +56,72 @@ namespace Main.SO.Input
         private void OnConfirm(InputAction.CallbackContext context)
         {
             if (ConfirmEvent != null && context.started) ConfirmEvent.Invoke();
-            Debug.Log("Confirm");
         }
 
         private void OnBack(InputAction.CallbackContext context)
         {
             if (BackEvent != null && context.started) BackEvent.Invoke();
-            Debug.Log("Back");
         }
 
         private void OnPause(InputAction.CallbackContext context)
         {
             if (PauseEvent != null && context.started) PauseEvent.Invoke();
-            Debug.Log("Pause");
         }
         #endregion
+
+        public void ToggleUIInput(bool value, UIInputType inputType = UIInputType.All)
+        {
+            switch (inputType)
+            {
+                case UIInputType.All:
+                    if (value)
+                    {
+                        _confirm.Enable();
+                        _back.Enable();
+                        _pause.Enable();
+                    }
+                    else
+                    {
+                        _confirm.Disable();
+                        _back.Disable();
+                        _pause.Disable();
+                    }
+                    break;
+
+                case UIInputType.Confirm:
+                    if (value)
+                    {
+                        _confirm.Enable();
+                    }
+                    else
+                    {
+                        _confirm.Disable();
+                    }
+                    break;
+
+                case UIInputType.Back:
+                    if (value)
+                    {
+                        _back.Enable();
+                    }
+                    else
+                    {
+                        _back.Disable();
+                    }
+                    break;
+
+                case UIInputType.Pause:
+                    if (value)
+                    {
+                        _pause.Enable();
+                    }
+                    else
+                    {
+                        _pause.Disable();
+                    }
+                    break;
+            }
+        }
+
     }
 }
