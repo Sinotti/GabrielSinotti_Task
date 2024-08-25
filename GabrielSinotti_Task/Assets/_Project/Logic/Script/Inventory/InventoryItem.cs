@@ -22,6 +22,11 @@ namespace Main.Interactables.Items
             base.Interact();
             if (CanInteract) CollectItem();
         }
+        
+        public virtual void UseInInventory()
+        {
+
+        }
 
         private void CollectItem()
         {
