@@ -1,16 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
+using Main.Interface;
+
 using UnityEngine;
+using UnityEngine.Events;
 
-public class InteractableBase : MonoBehaviour
+public class InteractableBase : MonoBehaviour, IInteractable
 {
-    private void Start()
-    {
-        
-    }
+    [Header("Interactable")]
+    [Space(6)]
+    [SerializeField] private UnityEvent _OnInteract;
+    public bool CanInteract { get; set; }
 
-    private void Update()
+    public virtual void Interact()
     {
-        
+        _OnInteract?.Invoke();
     }
 }
