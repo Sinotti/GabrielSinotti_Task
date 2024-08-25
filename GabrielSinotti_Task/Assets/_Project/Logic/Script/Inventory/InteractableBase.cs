@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class InteractableBase : MonoBehaviour, IInteractable
 {
-    [Header("Interactable")]
+    [Header("Interactable Inheritance")]
     [Space(6)]
     [SerializeField] private UnityEvent _OnInteract;
     public bool CanInteract { get; set; }

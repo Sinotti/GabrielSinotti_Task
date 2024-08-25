@@ -239,6 +239,7 @@ MonoBehaviour:
   _OnInteract:
     m_PersistentCalls:
       m_Calls: []
+  _inventoryItem: {fileID: 11400000, guid: fa505a0aa3377c8449b59a99318bc35f, type: 2}
 --- !u!4 &6590181791346555534 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8358222520086968426, guid: a685816e471a45948b6623beb18e80cd,
