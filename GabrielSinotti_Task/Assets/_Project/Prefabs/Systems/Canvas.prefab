@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4866462406413768169}
-  - component: {fileID: 7254156727008190043}
+  - component: {fileID: 6081973688497710430}
   m_Layer: 5
   m_Name: Readable Item Text
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   - {fileID: 1338630849577674277}
   m_Father: {fileID: 6675522357044409359}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7254156727008190043
+--- !u!114 &6081973688497710430
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,12 +42,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1031814171951948550}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff552c0fdfc8bb041bf6e5225ee40b9d, type: 3}
+  m_Script: {fileID: 11500000, guid: 2cb46a4fe6c40234a977e55c0c856867, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _slotPrefab: {fileID: 1744338829636408774, guid: 5a208998fba74074aa32687ef7d15a4e,
-    type: 3}
-  _slotsParent: {fileID: 0}
+  _readableField: {fileID: 6987600638088301225}
+  _readableTextArea: {fileID: 3982024124576768994}
 --- !u!1 &1835710747066247449
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,16 +357,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: <p>Pellentesque habitant morbi tristique senectus et netus et malesuada
-    fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget,
-    tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies
-    mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper
-    pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet,
-    wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci,
-    sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis.
-    Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue,
-    eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt
-    quis, accumsan porttitor, facilisis luctus, metus</p>
+  m_text: This text will be placed on readable clicked...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -943,6 +933,138 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!1 &6075560911486827727
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2805847700711086285}
+  - component: {fileID: 8640592929149016715}
+  - component: {fileID: 1911072635920740482}
+  - component: {fileID: 6863357301174467572}
+  m_Layer: 5
+  m_Name: Close Screen Button
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2805847700711086285
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6075560911486827727}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.9373524, y: 1.9373524, z: 1.9373524}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1338630849577674277}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 951.8, y: 485.5}
+  m_SizeDelta: {x: 30, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &8640592929149016715
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6075560911486827727}
+  m_CullTransparentMesh: 1
+--- !u!114 &1911072635920740482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6075560911486827727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6863357301174467572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6075560911486827727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1911072635920740482}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6081973688497710430}
+        m_TargetAssemblyTypeName: Main.UI.ReadableFieldManager, Assembly-CSharp
+        m_MethodName: ToggleReadableField
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6259031346112798641
 GameObject:
   m_ObjectHideFlags: 0
@@ -1105,7 +1227,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1338630849577674277
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1120,6 +1242,7 @@ RectTransform:
   m_Children:
   - {fileID: 1062289489043298453}
   - {fileID: 4125207027756660704}
+  - {fileID: 2805847700711086285}
   m_Father: {fileID: 4866462406413768169}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}

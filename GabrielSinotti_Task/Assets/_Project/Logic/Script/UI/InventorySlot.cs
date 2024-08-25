@@ -6,7 +6,7 @@ namespace Main.UI
 {
     public class InventorySlot : MonoBehaviour
     {
-        [SerializeField] private InventoryItemSO _currentItem;
+        private InventoryItemSO _currentItem;
 
         public void UseItem()
         {

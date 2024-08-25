@@ -9,7 +9,7 @@ namespace Main.Interactables.Items
     {
         [Header("References")]
         [Space(6)]
-        [SerializeField] private InventoryItemSO _inventoryItem;
+        [SerializeField] protected InventoryItemSO _inventoryItem;
 
         private bool InventoryFull => InventorySystem.Instance.InventoryFull;
 

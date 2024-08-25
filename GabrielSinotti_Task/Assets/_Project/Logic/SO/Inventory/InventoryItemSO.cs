@@ -6,7 +6,7 @@ namespace Main.SO.Items
     [CreateAssetMenu(menuName = "SO/Interactable/Inventory Item", fileName = "New Inventory Item")]
     public class InventoryItemSO : ScriptableObject
     {
-        [Header("inventory Item Inheritance")]
+        [Header("Inventory Item")]
         [Space(6)]
 
         [SerializeField] private int _itemID;

@@ -14,14 +14,14 @@ namespace Main.UI
 
         private void OnEnable()
         {
-            InventorySystem.OnAdded += UpdateUI;
-            InventorySystem.OnRemoved += UpdateUI;
+            InventorySystem.OnAdded += UpdateInventoryUI;
+            InventorySystem.OnRemoved += UpdateInventoryUI;
         }
 
         private void OnDisable()
         {
-            InventorySystem.OnAdded -= UpdateUI;
-            InventorySystem.OnRemoved -= UpdateUI;
+            InventorySystem.OnAdded -= UpdateInventoryUI;
+            InventorySystem.OnRemoved -= UpdateInventoryUI;
         }
 
         private void InitializeSlots(List<InventoryItemSO> items)
@@ -32,11 +32,9 @@ namespace Main.UI
             }
         }
 
-        private void UpdateUI(InventoryItemSO item)
+        private void UpdateInventoryUI(InventoryItemSO item)
         {
-
             ClearSlots();
-
             InitializeSlots(InventorySystem.Instance.GetAllItems());
         }
 

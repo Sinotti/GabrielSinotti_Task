@@ -1,4 +1,6 @@
 using Main.Interactables.Items;
+using Main.SO.Items;
+using Main.UI;
 using UnityEngine;
 
 public class ReadableItem : InventoryItem
@@ -12,6 +14,10 @@ public class ReadableItem : InventoryItem
     {
         base.UseInInventory();
         Debug.Log("Readable: " + gameObject.name + " used!");
+
+        ReadableItemSO readableItem = _inventoryItem as ReadableItemSO;
+
+        ReadableFieldManager.Instance.SetTextInReadableField(readableItem.ReadableText);
     }
 }
 
