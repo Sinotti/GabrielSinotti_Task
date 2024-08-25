@@ -12,7 +12,7 @@ namespace Main.Gameplay.Player.Behaviors
 
         [Header("References")]
         [Space(6)]
-        [SerializeField] private InputReader _inputReader;
+        [SerializeField] private InputReaderGameplay _inputReader;
 
         private float _currentSpeed;
         private Vector3 _currentDirectionInput;

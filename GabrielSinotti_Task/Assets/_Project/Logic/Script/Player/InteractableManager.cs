@@ -11,7 +11,7 @@ public class InteractableManager : MonoBehaviour
 
     [Header("References")]
     [Space(6)]
-    [SerializeField] private InputReader _inputReader;
+    [SerializeField] private InputReaderGameplay _inputReader;
 
     private bool _interactInput;
     private int _currentInteractableIndex = 0;

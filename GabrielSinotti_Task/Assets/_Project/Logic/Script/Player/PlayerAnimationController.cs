@@ -14,7 +14,7 @@ namespace Main.Gameplay.Player.Animations
         [Header("References")]
         [Space(6)]
         [SerializeField] private Animator _anim;
-        [SerializeField] private InputReader _inputReader;
+        [SerializeField] private InputReaderGameplay _inputReader;
 
         private int _animatorSpeedXHash = Animator.StringToHash("VelocityX");
         private int _animatorSpeedZHash = Animator.StringToHash("VelocityZ");

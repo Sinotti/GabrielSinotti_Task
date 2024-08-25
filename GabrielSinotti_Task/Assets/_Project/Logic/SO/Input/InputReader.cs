@@ -4,8 +4,8 @@ using UnityEngine.InputSystem;
 
 namespace Main.SO.Input
 {
-    [CreateAssetMenu(menuName = "SO/Input/Input Reader", fileName = "New Input Reader")]
-    public class InputReader : ScriptableObject
+    [CreateAssetMenu(menuName = "SO/Input/Input Reader Gameplay", fileName = "New Input Reader Gameplay")]
+    public class InputReaderGameplay : ScriptableObject
     {
         [SerializeField] private InputActionAsset _asset;
 
