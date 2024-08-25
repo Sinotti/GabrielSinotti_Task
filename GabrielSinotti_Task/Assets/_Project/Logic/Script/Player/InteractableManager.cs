@@ -23,8 +23,14 @@ public class InteractableManager : MonoBehaviour
         _inputReader.InteractEvent += OnInteract;
     }
 
+    private void OnDisable()
+    {
+        _inputReader.InteractEvent -= OnInteract;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.gameObject.name);
         if (other.gameObject.layer == _interactableLayer)
         {
             if (other.TryGetComponent(out IInteractable interactable))
