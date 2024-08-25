@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2812096647218756099}
   - component: {fileID: 2343933717373831201}
   - component: {fileID: 769489459883802530}
+  - component: {fileID: 4195177805260356775}
   m_Layer: 5
   m_Name: ItemSlot
   m_TagString: Untagged
@@ -122,6 +123,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4195177805260356775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1744338829636408774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ccf93b913f473941a58a18befa64c43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2360122072530580348
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,4 +329,16 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2678897349952357438}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4195177805260356775}
+        m_TargetAssemblyTypeName: Main.UI.InventorySlot, Assembly-CSharp
+        m_MethodName: RemoveItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

@@ -10,7 +10,7 @@ namespace Main.UI
     {
         [SerializeField] private GameObject _slotPrefab;
         [SerializeField] private Transform _slotsParent;
-        private List<Image> _slotImages = new List<Image>();
+        private List<InventorySlot> _slots = new List<InventorySlot>();
 
         private void OnEnable()
         {
@@ -34,35 +34,41 @@ namespace Main.UI
 
         private void UpdateUI(InventoryItemSO item)
         {
-            if (InventorySystem.Instance.HasSpecificItem(item)) AddSlot(item);
-            else RemoveSlot(item);
+
+            ClearSlots();
+
+            InitializeSlots(InventorySystem.Instance.GetAllItems());
         }
 
         private void AddSlot(InventoryItemSO item)
         {
             GameObject newSlot = Instantiate(_slotPrefab, _slotsParent);
-            Image slotImage = newSlot.GetComponent<Image>();
+            InventorySlot slotComponent = newSlot.GetComponent<InventorySlot>();
 
-            if (item != null)
+            if (slotComponent != null)
+            {
+                slotComponent.SetItem(item);
+            }
+
+            Image slotImage = newSlot.GetComponent<Image>();
+            if (slotImage != null && item != null)
             {
                 slotImage.sprite = item.ItemImage;
             }
 
-            _slotImages.Add(slotImage);
+            _slots.Add(slotComponent);
         }
 
-        private void RemoveSlot(InventoryItemSO item)
+        private void ClearSlots()
         {
-            for (int i = 0; i < _slotImages.Count; i++)
+            foreach (InventorySlot slot in _slots)
             {
-                if (_slotImages[i].sprite == item.ItemImage)
+                if (slot != null)
                 {
-                    Destroy(_slotImages[i].gameObject);
-                    _slotImages.RemoveAt(i);
-                    break;
+                    Destroy(slot.gameObject);
                 }
             }
+            _slots.Clear();
         }
     }
 }
-
