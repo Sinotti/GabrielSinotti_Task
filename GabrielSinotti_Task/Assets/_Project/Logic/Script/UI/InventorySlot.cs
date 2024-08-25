@@ -8,6 +8,11 @@ namespace Main.UI
     {
         [SerializeField] private InventoryItemSO _currentItem;
 
+        public void UseItem()
+        {
+            _currentItem.ItemTypeBaseScript.UseInInventory();
+        }
+
         public void RemoveItem()
         {
             if (_currentItem != null)

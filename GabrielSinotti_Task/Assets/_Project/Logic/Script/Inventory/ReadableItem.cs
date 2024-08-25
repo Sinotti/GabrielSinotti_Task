@@ -11,7 +11,7 @@ public class ReadableItem : InventoryItem
     public override void UseInInventory()
     {
         base.UseInInventory();
-        Debug.Log(gameObject.name + " used.");
+        Debug.Log("Readable: " + gameObject.name + " used!");
     }
 }
 

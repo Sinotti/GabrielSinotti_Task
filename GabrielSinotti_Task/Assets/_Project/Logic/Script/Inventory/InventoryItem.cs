@@ -1,10 +1,11 @@
+using Main.Interface;
 using Main.SO.Items;
 using Main.Systems;
 using UnityEngine;
 
 namespace Main.Interactables.Items
 {
-    public class InventoryItem : InteractableBase
+    public class InventoryItem : InteractableBase, IInventoryUsable
     {
         [Header("References")]
         [Space(6)]
@@ -23,10 +24,7 @@ namespace Main.Interactables.Items
             if (CanInteract) CollectItem();
         }
         
-        public virtual void UseInInventory()
-        {
-
-        }
+        public virtual void UseInInventory() { }
 
         private void CollectItem()
         {

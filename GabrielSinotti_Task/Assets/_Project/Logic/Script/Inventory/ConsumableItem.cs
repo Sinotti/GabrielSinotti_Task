@@ -11,6 +11,6 @@ public class ConsumableItem : InventoryItem
     public override void UseInInventory()
     {
         base.UseInInventory();
-        Debug.Log(gameObject.name + " used.");
+        Debug.Log("Consumable: " + gameObject.name + " used!");
     }
 }

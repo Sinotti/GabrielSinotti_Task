@@ -1,4 +1,3 @@
-
 namespace Main.Interface
 {
     public interface IInteractable
