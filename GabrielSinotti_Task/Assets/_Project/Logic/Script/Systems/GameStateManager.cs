@@ -1,9 +1,12 @@
+using Main.SO.Input;
 using UnityEngine;
 
 namespace Main.Systems
 {
     public class GameStateManager : MonoBehaviour
     {
+        [SerializeField] private InputReaderGameplay _inputReader;
+
         public enum GameState
         {
             Play,
@@ -30,8 +33,16 @@ namespace Main.Systems
         public void SetGameState(GameState newState)
         {
             CurrentState = newState;
-            if (newState == GameState.Pause) Time.timeScale = 0f;
-            else Time.timeScale = 1f;
+            if (newState == GameState.Pause)
+            {
+                _inputReader.ToggleGameplayInput(false, InputReaderGameplay.InputType.All);
+                Time.timeScale = 0f;
+            }
+            else 
+            {
+                _inputReader.ToggleGameplayInput(true, InputReaderGameplay.InputType.All);
+                Time.timeScale = 1f;
+            } 
         }
 
         public void TogglePause()
