@@ -1,8 +1,6 @@
 using Main.SO.Items;
-using System.Collections;
-using System.Collections.Generic;
+using Main.Systems;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class InventoryItemBase : InteractableBase
 {
