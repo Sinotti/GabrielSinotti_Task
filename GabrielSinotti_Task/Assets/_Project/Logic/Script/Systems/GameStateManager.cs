@@ -28,6 +28,8 @@ namespace Main.Systems
             {
                 Destroy(gameObject);
             }
+
+            ToggleMouse(false);
         }
 
         public void SetGameState(GameState newState)
@@ -36,19 +38,30 @@ namespace Main.Systems
             if (newState == GameState.Pause)
             {
                 _inputReader.ToggleGameplayInput(false, InputReaderGameplay.InputType.All);
+                ToggleMouse(true);
                 Time.timeScale = 0f;
             }
             else 
             {
                 _inputReader.ToggleGameplayInput(true, InputReaderGameplay.InputType.All);
+                ToggleMouse(false);
                 Time.timeScale = 1f;
             } 
         }
+
 
         public void TogglePause()
         {
             if (CurrentState == GameState.Play) SetGameState(GameState.Pause);
             else if (CurrentState == GameState.Pause) SetGameState(GameState.Play);
+        }
+
+        private void ToggleMouse(bool enabled)
+        {
+            if(enabled) Cursor.lockState = CursorLockMode.None;
+            else Cursor.lockState = CursorLockMode.Locked;
+
+            Cursor.visible = enabled;
         }
     }
 }
