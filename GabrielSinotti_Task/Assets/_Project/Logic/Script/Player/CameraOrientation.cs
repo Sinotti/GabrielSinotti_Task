@@ -17,6 +17,7 @@ namespace Main.Gameplay.Player.Behaviors
         private Vector3 _directionToLook;
         private Vector3 _cameraForward;
         private bool WalkingForward => _verticalInput > 0;
+        private bool WalkingBackward => _verticalInput < 0;
 
         private void Awake()
         {
@@ -34,6 +35,10 @@ namespace Main.Gameplay.Player.Behaviors
             {
                 RotateTowardsCamPosition();
             }
+            else if (WalkingBackward)
+            {
+                RotateWhenWalkingBackwards();
+            }
         }
 
         private void RotateTowardsCamPosition()
@@ -42,10 +47,29 @@ namespace Main.Gameplay.Player.Behaviors
 
             _directionToLook = GetCameraRotation() * _directionToLook;
 
-            if (WalkingForward && _directionToLook != Vector3.zero)
+            if (_directionToLook != Vector3.zero)
             {
                 Quaternion targetRotation = Quaternion.LookRotation(_directionToLook);
                 transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, _rotationSpeed * Time.deltaTime);
+            }
+        }
+
+        private void RotateWhenWalkingBackwards()
+        {
+            _directionToLook = new Vector3(0, 0, Mathf.Abs(_verticalInput));
+
+            _directionToLook = GetCameraRotation() * _directionToLook;
+
+            if (_directionToLook != Vector3.zero)
+            {
+                Quaternion targetRotation = Quaternion.LookRotation(_directionToLook);
+
+                Vector3 currentEulerAngles = transform.rotation.eulerAngles;
+                Vector3 targetEulerAngles = targetRotation.eulerAngles;
+
+                targetEulerAngles.y = Mathf.LerpAngle(currentEulerAngles.y, targetEulerAngles.y, _rotationSpeed * Time.deltaTime);
+
+                transform.rotation = Quaternion.Euler(currentEulerAngles.x, targetEulerAngles.y, currentEulerAngles.z);
             }
         }
 

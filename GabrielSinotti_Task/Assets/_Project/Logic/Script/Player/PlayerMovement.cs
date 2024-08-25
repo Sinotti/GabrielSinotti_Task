@@ -52,6 +52,11 @@ namespace Main.Gameplay.Player.Behaviors
             transform.position += moveDirection * _currentSpeed * Time.deltaTime;
         }
 
+        private void BlockHorizontalInputs(bool enabled)
+        {
+            _inputReader.ToggleGameplayInput(enabled, InputReaderGameplay.InputType.Horizontal);
+        }
+
         private void MoveSpeedManager()
         {
             if (_runInput) _currentSpeed = _runSpeed;
@@ -61,6 +66,9 @@ namespace Main.Gameplay.Player.Behaviors
         private void OnMoveVertical(float verticalMovementInput)
         {
             _currentDirectionInput.z = verticalMovementInput;
+
+            //if(_currentDirectionInput.z < 0) BlockHorizontalInputs(false);
+            //else BlockHorizontalInputs(true);
         }
 
         private void OnMoveHorizontal(float horizontalMovementInput)
