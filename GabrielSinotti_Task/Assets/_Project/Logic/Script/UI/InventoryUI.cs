@@ -40,6 +40,17 @@ namespace Main.UI
 
         private void AddSlot(InventoryItemSO item)
         {
+            if (item is ConsumableItemSO consumable)
+            {
+                InventorySlot existingSlot = _slots.Find(slot => slot.Item != null && slot.Item.ItemID == item.ItemID);
+
+                if (existingSlot != null)
+                {
+                    existingSlot.UpdateQuantity(consumable.Quantity);
+                    return;
+                }
+            }
+
             GameObject newSlot = Instantiate(_slotPrefab, _slotsParent);
             InventorySlot slotComponent = newSlot.GetComponent<InventorySlot>();
 

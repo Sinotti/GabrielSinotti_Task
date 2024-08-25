@@ -17,3 +17,4 @@ MonoBehaviour:
   _itemImage: {fileID: 21300000, guid: 075b2e71ec9d8a94798b7291f2d07177, type: 3}
   _itemTypeBaseScript: {fileID: 4995028216112640325, guid: d6fc9ef46e947fc4cafc80b9f74144c6,
     type: 3}
+  _quantity: -1

@@ -38,6 +38,18 @@ namespace Main.Systems
         {
             if (item == null) return;
 
+            if (item is ConsumableItemSO consumable)
+            {
+                ConsumableItemSO existingItem = _inventoryItems.Find(i => i is ConsumableItemSO && i.ItemID == item.ItemID) as ConsumableItemSO;
+
+                if (existingItem != null)
+                {
+                    existingItem.Quantity += consumable.Quantity;
+                    OnAdded?.Invoke(existingItem);
+                    return;
+                }
+            }
+
             if (_inventoryItems.Count < inventoryLimit)
             {
                 _inventoryItems.Add(item);
@@ -51,6 +63,7 @@ namespace Main.Systems
 
             _inventoryFull = _inventoryItems.Count >= inventoryLimit;
         }
+
 
         public bool HasSpecificItem(InventoryItemSO item)
         {

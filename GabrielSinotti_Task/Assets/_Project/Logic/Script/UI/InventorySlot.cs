@@ -1,32 +1,41 @@
-using UnityEngine;
 using Main.SO.Items;
-using Main.Systems;
+using TMPro;
+using UnityEngine;
 
-namespace Main.UI
+public class InventorySlot : MonoBehaviour
 {
-    public class InventorySlot : MonoBehaviour
+    [SerializeField] private TextMeshProUGUI quantityText;
+    public InventoryItemSO Item { get; private set; }
+
+    public void UseItem()
     {
-        private InventoryItemSO _currentItem;
+        UpdateQuantity(-1);
+    }
 
-        public void UseItem()
+    public void SetItem(InventoryItemSO item)
+    {
+        Item = item;
+        UpdateUI();
+    }
+
+    public void UpdateQuantity(int quantity)
+    {
+        if (Item is ConsumableItemSO consumable)
         {
-            _currentItem.ItemTypeBaseScript.UseInInventory();
+            consumable.Quantity += quantity;
+            UpdateUI();
         }
+    }
 
-        public void RemoveItem()
+    private void UpdateUI()
+    {
+        if (Item is ConsumableItemSO consumable)
         {
-            if (_currentItem != null)
-            {
-                InventorySystem.Instance.RemoveItem(_currentItem);
-                Debug.Log($"{_currentItem.name} removed.");
-
-                _currentItem = null;
-            }
+            quantityText.text = consumable.Quantity.ToString();
         }
-
-        public void SetItem(InventoryItemSO item)
+        else
         {
-            _currentItem = item;
+            quantityText.text = "";
         }
     }
 }
