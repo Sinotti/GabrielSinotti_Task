@@ -1,19 +1,16 @@
-Latest stable Build available at:
+Latest Stable Build
+You can download the latest stable build from the following link:
 
-https://drive.google.com/file/d/1inBwihRi3_QQWlThzO52t07jgVlHTDhV/view?usp=sharing
+Download Latest Build
 
-CONTROLS:
-
-Gameplay:
-
-W: Walk Forward.
-S: Walk Baward.
-A: Walk Left.
-D: WAlk Righ.
-Left Shift: Run.
-Interact: E.
-
-UI:
-
-Tab: Inventory.
-Esc: Pause.
+Controls
+Gameplay
+W: Walk Forward
+S: Walk Backward
+A: Walk Left
+D: Walk Right
+Left Shift: Run
+E: Interact
+UI
+Tab: Inventory
+Esc: Pause
