@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d3d2c3a85402514cabb23f50a292e9f, type: 3}
+  m_Name: Introduction Document
+  m_EditorClassIdentifier: 
+  _itemID: 201
+  _itemName: Journal Document
+  _itemImage: {fileID: 21300000, guid: cbb93489362cd924b8b6219f7d8d8679, type: 3}
+  _itemTypeBaseScript: {fileID: 5224595185279203645, guid: fd3a84433d7f3104ea43dbec62556a0a,
+    type: 3}
+  _readableText: '<b>Welcome to TestLab Inc.!</b>
+
+    
+
+    As part of our commitment
+    to developing potions with innovative and varied effects, we are excited to announce
+    that we have received a new volunteer subject for our testing. Your willingness
+    to participate in our experiments is invaluable and helps us advance research
+    and develop solutions that could transform the future. Get ready for a unique
+    journey as we test the effects of our potions and explore new possibilities together.
+    Your participation is crucial to the success of our projects!
+
+
+    You will
+    find notes for the respective potions. Good luck! :)'

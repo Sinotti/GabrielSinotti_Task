@@ -10,19 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d3d2c3a85402514cabb23f50a292e9f, type: 3}
-  m_Name: Readable Item Base
+  m_Name: Ghost Potion Document
   m_EditorClassIdentifier: 
-  _itemID: 200
-  _itemName: Readable Item Base
+  _itemID: 205
+  _itemName: Ghost Potion Document
   _itemImage: {fileID: 21300000, guid: cbb93489362cd924b8b6219f7d8d8679, type: 3}
-  _itemTypeBaseScript: {fileID: 2534723956012954885, guid: 5ed34a466a9499a4bb89f97025d7aaf4,
+  _itemTypeBaseScript: {fileID: 3457242467483044450, guid: b92859db7af3f8b46aa4870b5d98beb8,
     type: 3}
-  _readableText: '<b>"Blue potions are for purification"</b>
-
-
-    You need to take
-    one after completing your test with one of the other potions.
-
-
-    It also helps
-    to remove the bad taste from your mouth.'
+  _readableText: "<b>??? Potion</b>\n\nIf you're seeing this potion, something went
+    wrong. Please notify a supervisor.\n \nSTAY AWAY FROM THE ITEM."

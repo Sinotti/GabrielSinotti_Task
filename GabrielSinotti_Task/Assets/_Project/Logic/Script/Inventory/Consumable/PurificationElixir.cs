@@ -13,6 +13,7 @@ namespace Main.Interactables.Items
 
         public override void UseInInventory()
         {
+            if (!StatusManager.Instance.IsUnderEffect()) return;
             StatusManager.Instance.ResetScale();
 
             base.UseInInventory();

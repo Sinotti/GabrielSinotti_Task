@@ -10,19 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d3d2c3a85402514cabb23f50a292e9f, type: 3}
-  m_Name: Readable Item Base
+  m_Name: Dwarf Potion Document
   m_EditorClassIdentifier: 
-  _itemID: 200
-  _itemName: Readable Item Base
+  _itemID: 204
+  _itemName: Dwarf Potion Document
   _itemImage: {fileID: 21300000, guid: cbb93489362cd924b8b6219f7d8d8679, type: 3}
-  _itemTypeBaseScript: {fileID: 2534723956012954885, guid: 5ed34a466a9499a4bb89f97025d7aaf4,
+  _itemTypeBaseScript: {fileID: 3833068018343425586, guid: d8decf6fedfb3f8469a6fe11ae9465cf,
     type: 3}
-  _readableText: '<b>"Blue potions are for purification"</b>
+  _readableText: '<b>Dwarf Potion</b>
 
 
-    You need to take
-    one after completing your test with one of the other potions.
-
-
-    It also helps
-    to remove the bad taste from your mouth.'
+    With this, you''ll become so small that
+    if you''re not careful, someone might step on you.'
