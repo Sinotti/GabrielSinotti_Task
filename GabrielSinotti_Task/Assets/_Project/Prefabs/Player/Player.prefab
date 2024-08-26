@@ -230,6 +230,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerCollider: {fileID: 7471855269258938906}
+  _inputReaderGameplay: {fileID: 11400000, guid: 536751e8e0050554294815e35fde3082,
+    type: 2}
+  _inputReaderUI: {fileID: 11400000, guid: 576ab9b6cf72a9944ae3314c1778d763, type: 2}
 --- !u!136 &7471855269258938906
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -10,6 +10,7 @@ namespace Main.Interactables.Items
     {
         [Header("Ghost Potion Parameters")]
         [SerializeField] private float _disabledColliderDuration;
+
         public override void Interact()
         {
             base.Interact();
@@ -18,7 +19,7 @@ namespace Main.Interactables.Items
         public override void UseInInventory()
         {
             StatusManager.Instance.TemporarilyDisableCollision(_disabledColliderDuration);
-            GameStateManager.Instance.SetGameState(GameStateManager.GameState.Play);
+            UIManager.Instance.CloseInventoryAndResumeGame();
             base.UseInInventory();
         }
     }

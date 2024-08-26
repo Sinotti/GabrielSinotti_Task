@@ -33,7 +33,6 @@ namespace Main.Interactables.Items
                 CanInteract = false;
 
                 InventorySystem.Instance.AddItem(_inventoryItem);
-                Debug.Log(gameObject.name + " collected!");
                 Destroy(gameObject);
             }
         }

@@ -6,6 +6,8 @@ namespace Main.UI
 {
     public class UIManager : MonoBehaviour
     {
+        public static UIManager Instance { get; private set; }
+
         [Header("UI Screens")]
         [Space(6)]
 
@@ -13,10 +15,22 @@ namespace Main.UI
         [SerializeField] private GameObject _pauseScreen;
         [SerializeField] private GameObject _readableField;
         [SerializeField] private GameObject _collectedItemPopUp;
-        
+
         [Header("References")]
         [Space(6)]
         [SerializeField] private InputReaderUI _inputReader;
+
+        private void Awake()
+        {
+            if (Instance != null && Instance != this)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                Instance = this;
+            }
+        }
 
         private bool CanShowPauseScreen => _pauseScreen != null && !_inventoryScreen.activeSelf;
         private bool CanShowInventoryScreen => _inventoryScreen != null && !_pauseScreen.activeSelf;
@@ -25,18 +39,14 @@ namespace Main.UI
 
         private void OnEnable()
         {
-            _inputReader.ConfirmEvent += OnConfirm;
-            _inputReader.BackEvent += OnBack;
             _inputReader.PauseEvent += OnPause;
             _inputReader.InventoryEvent += OnInventory;
         }
 
         private void OnDisable()
         {
-            _inputReader.ConfirmEvent -= OnConfirm;
-            _inputReader.BackEvent -= OnBack;
             _inputReader.PauseEvent -= OnPause;
-            _inputReader.InventoryEvent += OnInventory;
+            _inputReader.InventoryEvent -= OnInventory;
         }
 
         private void ToggleScreen(GameObject screen)
@@ -45,19 +55,11 @@ namespace Main.UI
         }
 
         #region Input Assigments
-        private void OnConfirm()
-        {
-            Debug.Log("Confirm");
-        }
 
-        private void OnBack()
-        {
-            Debug.Log("Back"); 
-        }
 
         private void OnPause()
         {
-            if(CanShowPauseScreen)
+            if (CanShowPauseScreen)
             {
                 _inputReader.ToggleUIInput(!CanShowInventoryScreen, InputReaderUI.UIInputType.Inventory);
                 ToggleScreen(_pauseScreen);
@@ -67,13 +69,13 @@ namespace Main.UI
 
         private void OnInventory()
         {
-            if(CanShowInventoryScreen) 
+            if (CanShowInventoryScreen)
             {
                 _inputReader.ToggleUIInput(!CanShowPauseScreen, InputReaderUI.UIInputType.Pause);
-                
+
                 DisableUIOnInvetoryOpen();
                 ToggleScreen(_inventoryScreen);
-                
+
                 GameStateManager.Instance.TogglePause();
             }
         }
@@ -83,7 +85,15 @@ namespace Main.UI
             if (CanDisableReadableField) ToggleScreen(_readableField);
             if (CanDisablePopUp) ToggleScreen(_collectedItemPopUp);
         }
+
+        public void CloseInventoryAndResumeGame()
+        {
+            if (_inventoryScreen.activeSelf)
+            {
+                ToggleScreen(_inventoryScreen);
+                GameStateManager.Instance.TogglePause(); // Resume game
+            }
+        }
         #endregion
     }
 }
-
