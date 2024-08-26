@@ -2274,12 +2274,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Purification Elixir
       objectReference: {fileID: 0}
-    - target: {fileID: 2887206563225069138, guid: b6a3beb2663641e41b017152a4f7748d,
-        type: 3}
-      propertyPath: _inventoryItem
-      value: 
-      objectReference: {fileID: 11400000, guid: 8b90519976b70594aa050e5a8ece361e,
-        type: 2}
     - target: {fileID: 8559446136250869618, guid: b6a3beb2663641e41b017152a4f7748d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2650,17 +2644,17 @@ PrefabInstance:
     - target: {fileID: 4838454282184914070, guid: 7a77259b33222004e84f61647daabbfe,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.18031186
+      value: 0.18031189
       objectReference: {fileID: 0}
     - target: {fileID: 4838454282184914070, guid: 7a77259b33222004e84f61647daabbfe,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000032773876
+      value: 1.4512451e-15
       objectReference: {fileID: 0}
     - target: {fileID: 4838454282184914070, guid: 7a77259b33222004e84f61647daabbfe,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000060079928
+      value: 1.3869631e-16
       objectReference: {fileID: 0}
     - target: {fileID: 4928318183454330623, guid: 7a77259b33222004e84f61647daabbfe,
         type: 3}
