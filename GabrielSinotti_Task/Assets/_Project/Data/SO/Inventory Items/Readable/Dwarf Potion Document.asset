@@ -13,12 +13,11 @@ MonoBehaviour:
   m_Name: Dwarf Potion Document
   m_EditorClassIdentifier: 
   _itemID: 204
-  _itemName: Dwarf Potion Document
   _itemImage: {fileID: 21300000, guid: cbb93489362cd924b8b6219f7d8d8679, type: 3}
   _itemTypeBaseScript: {fileID: 3833068018343425586, guid: d8decf6fedfb3f8469a6fe11ae9465cf,
     type: 3}
-  _readableText: '<b>Dwarf Potion</b>
+  _readableText: '<b>Green Are Called: Dwarf Potions</b>
 
 
-    With this, you''ll become so small that
-    if you''re not careful, someone might step on you.'
+    With this, you''ll
+    become so small that if you''re not careful, someone might step on you.'

@@ -13,16 +13,7 @@ MonoBehaviour:
   m_Name: Readable Item Base
   m_EditorClassIdentifier: 
   _itemID: 200
-  _itemName: Readable Item Base
   _itemImage: {fileID: 21300000, guid: cbb93489362cd924b8b6219f7d8d8679, type: 3}
   _itemTypeBaseScript: {fileID: 2534723956012954885, guid: 5ed34a466a9499a4bb89f97025d7aaf4,
     type: 3}
-  _readableText: '<b>"Blue potions are for purification"</b>
-
-
-    You need to take
-    one after completing your test with one of the other potions.
-
-
-    It also helps
-    to remove the bad taste from your mouth.'
+  _readableText: 

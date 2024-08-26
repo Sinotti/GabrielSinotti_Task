@@ -13,12 +13,11 @@ MonoBehaviour:
   m_Name: Giant Potion Document
   m_EditorClassIdentifier: 
   _itemID: 203
-  _itemName: Giant Potion Document
   _itemImage: {fileID: 21300000, guid: cbb93489362cd924b8b6219f7d8d8679, type: 3}
   _itemTypeBaseScript: {fileID: 6872280077543417400, guid: e586135543b47774cad148f4099c2a1e,
     type: 3}
-  _readableText: '<b>Giant Potion</b>
+  _readableText: '<b>Red Are Called: Giant Potions</b>
 
 
-    I guarantee that with this, you''ll become
-    enormous.'
+    I guarantee that with
+    this, you''ll become enormous.'
