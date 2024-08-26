@@ -1,4 +1,5 @@
 using Main.SO.Items;
+using Main.Systems;
 using TMPro;
 using UnityEngine;
 
@@ -9,25 +10,27 @@ public class InventorySlot : MonoBehaviour
 
     public void UseItem()
     {
-        UpdateQuantity(-1);
+        Item.ItemTypeBaseScript.UseInInventory();   
     }
 
     public void SetItem(InventoryItemSO item)
     {
         Item = item;
-        UpdateUI();
     }
 
-    public void UpdateQuantity(int quantity)
+
+    public void RemoveItem()
     {
-        if (Item is ConsumableItemSO consumable)
+        if (Item != null)
         {
-            consumable.Quantity += quantity;
-            UpdateUI();
+            InventorySystem.Instance.RemoveItem(Item);
+            Debug.Log($"{Item.name} removed.");
+
+            Item = null;
         }
     }
 
-    private void UpdateUI()
+    public void UpdateUI()
     {
         if (Item is ConsumableItemSO consumable)
         {

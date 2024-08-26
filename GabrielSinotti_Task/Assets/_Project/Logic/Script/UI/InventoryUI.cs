@@ -46,7 +46,7 @@ namespace Main.UI
 
                 if (existingSlot != null)
                 {
-                    existingSlot.UpdateQuantity(consumable.Quantity);
+                    existingSlot.UpdateUI();
                     return;
                 }
             }
