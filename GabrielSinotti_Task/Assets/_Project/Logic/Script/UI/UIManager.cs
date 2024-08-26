@@ -11,6 +11,7 @@ namespace Main.UI
 
         [SerializeField] private GameObject _inventoryScreen;
         [SerializeField] private GameObject _pauseScreen;
+        [SerializeField] private GameObject _readableField;
         
         [Header("References")]
         [Space(6)]
@@ -18,7 +19,7 @@ namespace Main.UI
 
         private bool CanShowPauseScreen => _pauseScreen != null && !_inventoryScreen.activeSelf;
         private bool CanShowInventoryScreen => _inventoryScreen != null && !_pauseScreen.activeSelf;
-
+        private bool CanDisableReadableField => _readableField != null && _readableField.activeSelf;
         private void OnEnable()
         {
             _inputReader.ConfirmEvent += OnConfirm;
@@ -66,6 +67,8 @@ namespace Main.UI
             if(CanShowInventoryScreen) 
             {
                 _inputReader.ToggleUIInput(!CanShowPauseScreen, InputReaderUI.UIInputType.Pause);
+                if (CanDisableReadableField) ToggleScreen(_readableField);
+
                 ToggleScreen(_inventoryScreen);
                 GameStateManager.Instance.TogglePause();
             }

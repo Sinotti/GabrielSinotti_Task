@@ -148,7 +148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ccf93b913f473941a58a18befa64c43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quantityText: {fileID: 4546837106683995877}
+  _quantityText: {fileID: 4546837106683995877}
+  _quantityField: {fileID: 3243653519021222818}
 --- !u!1 &2360122072530580348
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,7 +242,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7190925198973951846
 RectTransform:
   m_ObjectHideFlags: 0

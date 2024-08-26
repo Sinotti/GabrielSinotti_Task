@@ -27,6 +27,7 @@ public class ConsumableItem : InventoryItem
             }
 
             InventorySlot slot = FindSlot(); 
+
             if (slot != null)
             {
                 slot.UpdateUI();

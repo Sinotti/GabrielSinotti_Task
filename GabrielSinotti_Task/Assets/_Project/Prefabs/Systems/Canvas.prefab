@@ -166,6 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inventoryScreen: {fileID: 4166955069181706006}
   _pauseScreen: {fileID: 7124853707185410493}
+  _readableField: {fileID: 6987600638088301225}
   _inputReader: {fileID: 11400000, guid: 576ab9b6cf72a9944ae3314c1778d763, type: 2}
 --- !u!1 &2881804379016978808
 GameObject:

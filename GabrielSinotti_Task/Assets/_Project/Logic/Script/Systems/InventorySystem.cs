@@ -44,7 +44,7 @@ namespace Main.Systems
 
                 if (existingItem != null)
                 {
-                    existingItem.Quantity += consumable.Quantity;
+                    existingItem.Quantity += 1;
                     OnAdded?.Invoke(existingItem);
                     return;
                 }

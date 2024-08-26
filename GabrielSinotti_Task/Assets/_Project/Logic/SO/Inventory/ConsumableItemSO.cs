@@ -10,6 +10,11 @@ namespace Main.SO.Items
         [SerializeField] private int _quantity = 1;
 
         public int Quantity { get => _quantity; set => _quantity = value; }
+
+        private void OnDisable()
+        {
+            _quantity = 1;
+        }
     }
 }
 
