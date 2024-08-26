@@ -2235,11 +2235,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 307895430780939648, guid: a38ee454170b2d7418617a7b5d00ef95,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 775927344088208571, guid: a38ee454170b2d7418617a7b5d00ef95,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2295,11 +2290,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: House
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8111786979036903160, guid: a38ee454170b2d7418617a7b5d00ef95, type: 3}
-    - {fileID: 5506899085397867486, guid: a38ee454170b2d7418617a7b5d00ef95, type: 3}
-    m_RemovedGameObjects:
-    - {fileID: 307895430780939648, guid: a38ee454170b2d7418617a7b5d00ef95, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a38ee454170b2d7418617a7b5d00ef95, type: 3}
@@ -15944,12 +15936,12 @@ PrefabInstance:
     - target: {fileID: 755485794291333202, guid: 7a77259b33222004e84f61647daabbfe,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000017025888
+      value: 0.000000017025888
       objectReference: {fileID: 0}
     - target: {fileID: 755485794291333202, guid: 7a77259b33222004e84f61647daabbfe,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000024856919
+      value: -0.0000000024856919
       objectReference: {fileID: 0}
     - target: {fileID: 3884826340567031693, guid: 7a77259b33222004e84f61647daabbfe,
         type: 3}
