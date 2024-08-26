@@ -1,0 +1,21 @@
+using Main.Gameplay.Player;
+using UnityEngine;
+
+namespace Main.Interactables.Items
+{
+    public class ScalePotion : ConsumableItem
+    {
+        [SerializeField] public float _scaleModifier;
+
+        public override void Interact()
+        {
+            base.Interact();
+        }
+
+        public override void UseInInventory()
+        {
+            StatusManager.Instance.SetPlayerSize(_scaleModifier);
+            base.UseInInventory();            
+        }
+    }
+}
