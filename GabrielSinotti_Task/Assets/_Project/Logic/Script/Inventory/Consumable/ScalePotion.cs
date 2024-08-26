@@ -16,6 +16,8 @@ namespace Main.Interactables.Items
 
         public override void UseInInventory()
         {
+            if (StatusManager.Instance.IsUnderEffect()) return;
+
             StatusManager.Instance.SetPlayerSize(_scaleModifier);
             base.UseInInventory();            
         }

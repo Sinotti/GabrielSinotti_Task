@@ -1,5 +1,6 @@
 using Main.Gameplay.Player;
-using UnityEngine;
+using Main.Systems;
+using Main.UI;
 
 namespace Main.Interactables.Items
 {
@@ -13,6 +14,7 @@ namespace Main.Interactables.Items
         public override void UseInInventory()
         {
             StatusManager.Instance.ResetScale();
+
             base.UseInInventory();
         }
     }

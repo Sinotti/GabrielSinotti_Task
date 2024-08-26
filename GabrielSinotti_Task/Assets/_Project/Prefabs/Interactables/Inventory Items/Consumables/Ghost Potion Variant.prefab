@@ -177,3 +177,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34204c18cca48f64288dbbcb726f229b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _OnInteract:
+    m_PersistentCalls:
+      m_Calls: []
+  _inventoryItem: {fileID: 11400000, guid: fd0332b82feb3b44dbc69b0987249044, type: 2}
+  _disabledColliderDuration: 2

@@ -24,6 +24,8 @@ namespace Main.UI
 
         private void ShowPopUp(InventoryItemSO item)
         {
+            _popUpParent.transform.parent.gameObject.SetActive(true);
+
             if (item == null || _popUpPrefab == null || _popUpParent == null)
             {
                 Debug.LogWarning("CollectItemPopUP: Missing prefab or parent.");

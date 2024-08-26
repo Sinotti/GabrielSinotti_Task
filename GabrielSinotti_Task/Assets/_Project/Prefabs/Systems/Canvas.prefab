@@ -167,6 +167,7 @@ MonoBehaviour:
   _inventoryScreen: {fileID: 4166955069181706006}
   _pauseScreen: {fileID: 7124853707185410493}
   _readableField: {fileID: 6987600638088301225}
+  _collectedItemPopUp: {fileID: 2881804379016978808}
   _inputReader: {fileID: 11400000, guid: 576ab9b6cf72a9944ae3314c1778d763, type: 2}
 --- !u!1 &2881804379016978808
 GameObject:
@@ -1545,7 +1546,7 @@ MonoBehaviour:
   _popUpPrefab: {fileID: 1613233465315481055, guid: 7b6728d181fd31442aa2e767ca41e540,
     type: 3}
   _popUpParent: {fileID: 6906993584402133936}
-  _displayDuration: 2.5
+  _displayDuration: 2
 --- !u!1 &7675578402955171409
 GameObject:
   m_ObjectHideFlags: 0
