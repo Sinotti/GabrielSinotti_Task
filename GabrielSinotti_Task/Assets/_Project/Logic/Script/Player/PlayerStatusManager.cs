@@ -39,11 +39,6 @@ namespace Main.Gameplay.Player
             StartCoroutine(AnimatePlayerSizeChange(_originalSize, 1f));
         }
 
-        public Vector3 GetPlayerSize()
-        {
-            return _playerSize;
-        }
-
         private IEnumerator AnimatePlayerSizeChange(Vector3 targetSize, float duration)
         {
             Vector3 initialSize = transform.localScale;

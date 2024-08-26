@@ -91,3 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ac571be6d244b9418eb3d66b01e6b35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _OnInteract:
+    m_PersistentCalls:
+      m_Calls: []
+  _inventoryItem: {fileID: 11400000, guid: 8b90519976b70594aa050e5a8ece361e, type: 2}

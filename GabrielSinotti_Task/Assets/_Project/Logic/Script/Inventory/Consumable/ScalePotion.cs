@@ -5,6 +5,8 @@ namespace Main.Interactables.Items
 {
     public class ScalePotion : ConsumableItem
     {
+        [Header("Potion Parameters")]
+        [Space(6)]
         [SerializeField] public float _scaleModifier;
 
         public override void Interact()
