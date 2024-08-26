@@ -10,14 +10,14 @@ public class InventorySlot : MonoBehaviour
 
     public void UseItem()
     {
-        Item.ItemTypeBaseScript.UseInInventory();   
+        Item.ItemTypeBaseScript.UseInInventory();
     }
 
     public void SetItem(InventoryItemSO item)
     {
         Item = item;
+        UpdateUI(); 
     }
-
 
     public void RemoveItem()
     {
@@ -25,9 +25,10 @@ public class InventorySlot : MonoBehaviour
         {
             InventorySystem.Instance.RemoveItem(Item);
             Debug.Log($"{Item.name} removed.");
-
             Item = null;
         }
+
+        UpdateUI();
     }
 
     public void UpdateUI()
