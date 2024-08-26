@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: Giant Potion
   m_EditorClassIdentifier: 
   _itemID: 102
-  _itemName: Giant Potion
-  _itemImage: {fileID: 21300000, guid: 075b2e71ec9d8a94798b7291f2d07177, type: 3}
+  _itemImage: {fileID: 21300000, guid: 482afdd183a0b4e4db72d3e0267b559e, type: 3}
   _itemTypeBaseScript: {fileID: 4579744883576161728, guid: f589ad41fe49efc4d9dc5c5d0a85db75,
     type: 3}
   _quantity: 1

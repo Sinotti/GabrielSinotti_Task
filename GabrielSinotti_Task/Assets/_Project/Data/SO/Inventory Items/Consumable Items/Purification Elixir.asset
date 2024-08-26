@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: Purification Elixir
   m_EditorClassIdentifier: 
   _itemID: 103
-  _itemName: Purification Elixir
-  _itemImage: {fileID: 21300000, guid: e6ddb4b03f667fc44b3532bf05c941fd, type: 3}
+  _itemImage: {fileID: 21300000, guid: 9affd11758906da48b354e25139e88a0, type: 3}
   _itemTypeBaseScript: {fileID: 2887206563225069138, guid: b6a3beb2663641e41b017152a4f7748d,
     type: 3}
-  _quantity: 1
+  _quantity: 0

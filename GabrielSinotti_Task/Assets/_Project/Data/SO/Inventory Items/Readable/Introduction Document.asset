@@ -13,22 +13,11 @@ MonoBehaviour:
   m_Name: Introduction Document
   m_EditorClassIdentifier: 
   _itemID: 201
-  _itemName: Journal Document
   _itemImage: {fileID: 21300000, guid: cbb93489362cd924b8b6219f7d8d8679, type: 3}
   _itemTypeBaseScript: {fileID: 5224595185279203645, guid: fd3a84433d7f3104ea43dbec62556a0a,
     type: 3}
-  _readableText: '<b>Welcome to TestLab Inc.!</b>
-
-    
-
-    As part of our commitment
-    to developing potions with innovative and varied effects, we are excited to announce
-    that we have received a new volunteer subject for our testing. Your willingness
-    to participate in our experiments is invaluable and helps us advance research
-    and develop solutions that could transform the future. Get ready for a unique
-    journey as we test the effects of our potions and explore new possibilities together.
-    Your participation is crucial to the success of our projects!
-
-
-    You will
-    find notes for the respective potions. Good luck! :)'
+  _readableText: "<b>Welcome to TestLab Inc.!</b>\n\nWe are very grateful that you
+    agreed to be part of our developing potion process. Your willingness to participate
+    in our experiments is invaluable and helps us advance research and develop solutions
+    that could transform the future. \n\nYou will find notes for the respective potions.
+    Good luck! :)"

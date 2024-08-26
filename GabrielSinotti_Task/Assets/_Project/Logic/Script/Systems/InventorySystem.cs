@@ -80,6 +80,29 @@ namespace Main.Systems
             }
         }
 
+        public void ClearInventory()
+        {
+            var itemsToRemove = new List<InventoryItemSO>(_inventoryItems);
+
+            foreach (var item in itemsToRemove)
+            {
+                if (item is ConsumableItemSO consumableItem)
+                {
+                    consumableItem.Quantity = 0;
+                }
+
+                _inventoryItems.Remove(item);
+                OnRemoved?.Invoke(item);
+            }
+
+            _inventoryItems.Clear();
+            _inventoryFull = false; 
+
+            Debug.Log("Inventory has been cleared and consumable stacks reset.");
+        }
+
+
+
         public List<InventoryItemSO> GetAllItems()
         {
             return new List<InventoryItemSO>(_inventoryItems);

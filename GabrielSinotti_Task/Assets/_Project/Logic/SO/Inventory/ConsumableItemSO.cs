@@ -11,10 +11,10 @@ namespace Main.SO.Items
 
         public int Quantity { get => _quantity; set => _quantity = value; }
 
-        private void OnDisable()
+        private void OnEnable()
         {
             _quantity = 1;
-        }
+        }   
     }
 }
 

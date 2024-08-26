@@ -16,12 +16,12 @@ MonoBehaviour:
   _itemImage: {fileID: 21300000, guid: cbb93489362cd924b8b6219f7d8d8679, type: 3}
   _itemTypeBaseScript: {fileID: 6743301392938027036, guid: e933944dda6ad8e43ad530af5c12dafb,
     type: 3}
-  _readableText: '<b>"Blue Are Called: Purification Potions"</b>
+  _readableText: '<b><color=blue>Blue</color> Are Called: Purification Potion</b>
 
 
-    You need to
-    take one after completing your test with one of the other potions.
+    You
+    need to take one after completing your test with one of the other potions.
 
 
-    It also
-    helps to remove the bad taste from your mouth.'
+    It
+    also helps to remove the bad taste from your mouth.'
