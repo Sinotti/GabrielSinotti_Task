@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d3d2c3a85402514cabb23f50a292e9f, type: 3}
+  m_Name: Note 2
+  m_EditorClassIdentifier: 
+  _itemID: 207
+  _itemImage: {fileID: 21300000, guid: cbb93489362cd924b8b6219f7d8d8679, type: 3}
+  _itemTypeBaseScript: {fileID: 8662108513825527771, guid: 5d056d63399ff5d44b09ee30a33a20ee,
+    type: 3}
+  _readableText: Lately, I keep forgetting simple things. Names, places, even what
+    I was doing just moments ago. It's as if my mind is slipping through my fingers,
+    and I can't seem to hold onto any memory.
