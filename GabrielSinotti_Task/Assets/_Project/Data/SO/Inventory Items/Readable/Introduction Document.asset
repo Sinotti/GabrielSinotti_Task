@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Introduction Document
   m_EditorClassIdentifier: 
   _itemID: 201
-  _itemImage: {fileID: 21300000, guid: cbb93489362cd924b8b6219f7d8d8679, type: 3}
+  _itemImage: {fileID: 21300000, guid: 3a9369f49ea55914c9128170309a9bf3, type: 3}
   _itemTypeBaseScript: {fileID: 5224595185279203645, guid: fd3a84433d7f3104ea43dbec62556a0a,
     type: 3}
   _readableText: "<b>Welcome to TestLab Inc.!</b>\n\nWe are very grateful that you

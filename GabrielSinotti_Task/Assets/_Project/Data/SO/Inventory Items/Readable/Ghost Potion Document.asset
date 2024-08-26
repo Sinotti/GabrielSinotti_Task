@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Ghost Potion Document
   m_EditorClassIdentifier: 
   _itemID: 205
-  _itemImage: {fileID: 21300000, guid: cbb93489362cd924b8b6219f7d8d8679, type: 3}
+  _itemImage: {fileID: 21300000, guid: 3a9369f49ea55914c9128170309a9bf3, type: 3}
   _itemTypeBaseScript: {fileID: 3457242467483044450, guid: b92859db7af3f8b46aa4870b5d98beb8,
     type: 3}
   _readableText: "<b><color=white>???</color> Potion</b>\r\n\nIf you're seeing this

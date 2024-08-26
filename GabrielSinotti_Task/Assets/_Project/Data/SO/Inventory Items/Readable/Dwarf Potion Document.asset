@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dwarf Potion Document
   m_EditorClassIdentifier: 
   _itemID: 204
-  _itemImage: {fileID: 21300000, guid: cbb93489362cd924b8b6219f7d8d8679, type: 3}
+  _itemImage: {fileID: 21300000, guid: 3a9369f49ea55914c9128170309a9bf3, type: 3}
   _itemTypeBaseScript: {fileID: 3833068018343425586, guid: d8decf6fedfb3f8469a6fe11ae9465cf,
     type: 3}
   _readableText: '<b><color=green>Green</color> Are Called: Dwarf Potion</b>
