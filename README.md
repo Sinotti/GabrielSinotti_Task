@@ -1,3 +1,5 @@
+**None of the graphic resources used were produced by me.**
+
 ## Latest Stable Build
 
 You can download the latest stable build from the following link:
