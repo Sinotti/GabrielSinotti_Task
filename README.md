@@ -19,7 +19,7 @@ You can download the latest stable build from the following link:
 - **A**: Walk Left
 - **D**: Walk Right
 - **Left Shift**: Run
-- **E**: Interact
+- **F**: Interact
 
 ### UI
 
